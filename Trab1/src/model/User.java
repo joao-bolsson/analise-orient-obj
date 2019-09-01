@@ -48,4 +48,9 @@ public class User extends ListModel<Request> {
         this.phone = phone;
     }
 
+    @Override
+    public String toString() {
+        return id + " - " + email;
+    }
+
 }

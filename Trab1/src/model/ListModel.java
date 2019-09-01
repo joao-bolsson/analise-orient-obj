@@ -33,4 +33,8 @@ public class ListModel<E> {
         }
     }
 
+    public List<E> getList() {
+        return list;
+    }
+
 }
