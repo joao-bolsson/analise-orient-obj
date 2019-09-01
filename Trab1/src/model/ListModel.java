@@ -20,6 +20,9 @@ public class ListModel<E> {
     public void add(final E item) {
         if (!list.contains(item)) {
             list.add(item);
+            System.out.println("Elemento Adicionado!");
+        } else {
+            System.out.println("Elemento já inserido");
         }
     }
 
@@ -30,6 +33,9 @@ public class ListModel<E> {
     public void remove(int index) {
         if (index >= 0 && index < list.size()) {
             list.remove(index);
+            System.out.println("Elemento Removido!");
+        } else {
+            System.out.println("Elemento Inválido");
         }
     }
 

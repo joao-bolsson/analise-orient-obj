@@ -1,39 +1,39 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Ago 31.
  */
-public class Request {
+public class Request extends ListModel<ItemRequest> {
 
-    private final List<ItemRequest> items;
+    private final String id;
 
-    public Request() {
-        this(new ArrayList<>());
+    public Request(final String id) {
+        this.id = id;
     }
 
-    public Request(final List<ItemRequest> items) {
-        this.items = items;
-    }
-
-    public void addItem(final ItemRequest item) {
-        if (!items.contains(item)) {
-            items.add(item);
+    @Override
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof Request)) {
+            return false;
         }
-    }
 
-    public void remove(final ItemRequest item) {
-        remove(items.indexOf(item));
-    }
-
-    public void remove(int index) {
-        if (index >= 0 && index < items.size()) {
-            items.remove(index);
+        if (obj == this) {
+            return true;
         }
+
+        Request other = (Request) obj;
+        return other.id.equals(id);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
+        return hash;
     }
 
 }

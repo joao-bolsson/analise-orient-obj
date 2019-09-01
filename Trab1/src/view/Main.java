@@ -49,14 +49,25 @@ public class Main {
                 addUser();
                 break;
 
+            case "-U":
+                removeUser();
+                break;
+
             case "+P":
                 addProduct();
+                break;
+
+            case "-P":
+                removeProduct();
                 break;
 
             case "+R":
                 addRequest();
                 break;
 
+            case "-R":
+                removeRequest();
+                break;
         }
     }
 
@@ -91,10 +102,28 @@ public class Main {
 
         ItemRequest item = new ItemRequest(product, qtd);
 
-        Request request = new Request();
-        request.addItem(item);
+        Request request = new Request(user.getId() + "-" + user.getList().size());
+        request.add(item);
 
         user.add(request);
+    }
+
+    private void removeRequest() {
+        System.out.println("--Remover Pedido--");
+        List<User> list = userController.getList();
+
+        for (User u : list) {
+            System.out.println("Pedidos do usuário " + u);
+            List<Request> list1 = u.getList();
+            for (Request r : list1) {
+                System.out.println("----" + r);
+            }
+        }
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Request's id: ");
+        in.nextLine();
+
     }
 
     private void addProduct() {
@@ -109,17 +138,50 @@ public class Main {
         prodController.add(new Product(name, value));
     }
 
+    private void removeProduct() {
+        System.out.println("--Remover Produto--");
+        System.out.println("Lista de Produtos:");
+        List<Product> list = prodController.getList();
+        for (Product p : list) {
+            System.out.println(p);
+        }
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Product's name: ");
+        String name = in.nextLine();
+
+        prodController.remove(prodController.getProduct(name));
+    }
+
     private void addUser() {
+        System.out.println("--Adicionar Usuário--");
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("User's id: ");
+        String id = in.nextLine();
+
+        System.out.println("User's email: ");
+        String email = in.nextLine();
+
+        User user = new User(id, email);
+        userController.add(user);
+    }
+
+    private void removeUser() {
+        System.out.println("--Remover Usuário--");
+        System.out.println("Lista de Usuários:");
+        List<User> list = userController.getList();
+        for (User u : list) {
+            System.out.println(u);
+        }
+
         Scanner in = new Scanner(System.in);
 
         System.out.println("User id: ");
         String id = in.nextLine();
 
-        System.out.println("User email: ");
-        String email = in.nextLine();
-
-        User user = new User(id, email);
-        userController.add(user);
+        userController.remove(userController.getUser(id));
     }
 
     public static void main(final String[] args) {
