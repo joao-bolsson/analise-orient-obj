@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
@@ -46,6 +48,28 @@ public class User extends ListModel<Request> {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof User)) {
+            return false;
+        }
+
+        if (obj == this) {
+            return true;
+        }
+
+        User other = (User) obj;
+        return other.id.equals(id) && other.email.equals(email);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + Objects.hashCode(this.id);
+        hash = 41 * hash + Objects.hashCode(this.email);
+        return hash;
     }
 
     @Override

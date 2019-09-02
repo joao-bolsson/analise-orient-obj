@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -41,6 +43,32 @@ public class ListModel<E> {
 
     public List<E> getList() {
         return list;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(list.toArray());
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof ListModel)) {
+            return false;
+        }
+
+        if (obj == this) {
+            return true;
+        }
+
+        ListModel other = (ListModel) obj;
+        return other.list.containsAll(list) && list.containsAll(other.list);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + Objects.hashCode(this.list);
+        return hash;
     }
 
 }

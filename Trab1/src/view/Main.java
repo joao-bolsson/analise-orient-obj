@@ -26,10 +26,10 @@ public class Main {
         // Using Scanner for Getting Input from User
         Scanner in = new Scanner(System.in);
 
-        String cmd = in.nextLine();
+        String cmd = "";
 
-        do {
-            System.out.println("Comandos:");
+        while (!cmd.equals("Q")) {
+            System.out.println("--------Comandos:------");
             System.out.println("[Q]  para sair");
             System.out.println("[+U] adicionar usuário");
             System.out.println("[-U] remover usuário");
@@ -38,9 +38,11 @@ public class Main {
             System.out.println("[+R] adicionar pedido");
             System.out.println("[-R] remover pedido");
 
+            System.out.print("Comando: ");
+            cmd = in.nextLine();
+            System.out.println("\n");
             proccessCmd(cmd);
-
-        } while (!cmd.equals("Q"));
+        }
     }
 
     private void proccessCmd(final String cmd) {

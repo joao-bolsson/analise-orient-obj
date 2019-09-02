@@ -16,6 +16,11 @@ public class Request extends ListModel<ItemRequest> {
     }
 
     @Override
+    public String toString() {
+        return id + " items: " + getList();
+    }
+
+    @Override
     public boolean equals(final Object obj) {
         if (!(obj instanceof Request)) {
             return false;

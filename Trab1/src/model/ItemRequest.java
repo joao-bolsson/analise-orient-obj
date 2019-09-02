@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
@@ -31,6 +33,33 @@ public class ItemRequest {
 
     public int getQtd() {
         return qtd;
+    }
+
+    @Override
+    public String toString() {
+        return product + " qtd: " + qtd;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof ItemRequest)) {
+            return false;
+        }
+
+        if (obj == this) {
+            return true;
+        }
+
+        ItemRequest other = (ItemRequest) obj;
+        return other.product.equals(product) && other.qtd == qtd;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.product);
+        hash = 23 * hash + this.qtd;
+        return hash;
     }
 
 }
