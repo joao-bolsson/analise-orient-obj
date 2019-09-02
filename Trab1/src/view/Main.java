@@ -114,18 +114,33 @@ public class Main {
         System.out.println("--Remover Pedido--");
         List<User> list = userController.getList();
 
+        System.out.println("Usuários:");
         for (User u : list) {
-            System.out.println("Pedidos do usuário " + u);
-            List<Request> list1 = u.getList();
-            for (Request r : list1) {
-                System.out.println("----" + r);
-            }
+            System.out.println(u);
         }
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Request's id: ");
-        in.nextLine();
+        System.out.println("User's id:");
+        String userId = in.nextLine();
 
+        System.out.println("User's requests:");
+        User user = userController.getUser(userId);
+        List<Request> list1 = user.getList();
+        for (Request r : list1) {
+            System.out.println(r);
+        }
+
+        String reqId = in.nextLine();
+
+        Request toRemove = null;
+        for (Request r : user.getList()) {
+            if (r.getId().equals(reqId)) {
+                toRemove = r;
+                break;
+            }
+        }
+
+        user.remove(toRemove);
     }
 
     private void addProduct() {

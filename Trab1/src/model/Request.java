@@ -15,6 +15,10 @@ public class Request extends ListModel<ItemRequest> {
         this.id = id;
     }
 
+    public String getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return id + " items: " + getList();
