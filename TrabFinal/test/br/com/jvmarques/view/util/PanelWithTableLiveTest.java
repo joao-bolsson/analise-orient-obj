@@ -1,8 +1,7 @@
-package br.com.animati.hp.forms.swing.util;
+package br.com.jvmarques.view.util;
 
 import br.com.jvmarques.controller.OptionsController;
 import br.com.jvmarques.model.CustomTableModel;
-import br.com.jvmarques.view.util.PanelWithTable;
 import java.awt.Window;
 import java.util.Arrays;
 import javax.swing.JDialog;
