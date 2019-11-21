@@ -50,8 +50,8 @@ public class TableWithOptions extends JTable {
         this.columnOpt = columnOpt;
     }
 
-    private void buildOptions(boolean edit, boolean delete, final ArrayList<JButton> extOptions) {
-        if (edit) {
+    private void buildOptions() {
+        if (controller.showEdit()) {
             JButton btnEdit = new JButton(new AbstractAction("Editar") {
                 @Override
                 public void actionPerformed(final ActionEvent e) {
@@ -70,7 +70,7 @@ public class TableWithOptions extends JTable {
             addOption(btnEdit);
         }
 
-        if (delete) {
+        if (controller.showDelete()) {
             JButton btnDelete = new JButton(new AbstractAction("Deletar") {
                 @Override
                 public void actionPerformed(final ActionEvent e) {
@@ -91,6 +91,7 @@ public class TableWithOptions extends JTable {
             addOption(btnDelete);
         }
 
+        List<JButton> extOptions = controller.getExtOptions();
         if (extOptions != null) {
             for (JButton btn : extOptions) {
                 addOption(btn);
@@ -111,14 +112,11 @@ public class TableWithOptions extends JTable {
 
     /**
      * Initialize this component.
-     *
-     * @param edit If each row must has option to edit - true.
-     * @param delete If reach row must has option to edit - true.
-     * @param extOptions External options.
      */
-    public void init(boolean edit, boolean delete, final ArrayList<JButton> extOptions) {
+    public void init() {
         if (!initialized) {
-            buildOptions(edit, delete, extOptions);
+            controller.setTable(this);
+            buildOptions();
 
             setRowHeight(DEFAULT_LINE_HEIGHT);
 

@@ -1,6 +1,9 @@
 package br.com.jvmarques.controller;
 
 import java.awt.Window;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JTable;
 
 /**
  *
@@ -31,6 +34,26 @@ public interface OptionsController<E> {
      * @param parent Parent window to open possible panels to add.
      */
     default void add(Window parent) {
+        // empty
+    }
+
+    default boolean showEdit() {
+        return true;
+    }
+
+    default boolean showDelete() {
+        return true;
+    }
+
+    default boolean showAdd() {
+        return true;
+    }
+
+    default List<JButton> getExtOptions() {
+        return null;
+    }
+
+    default void setTable(JTable table) {
         // empty
     }
 

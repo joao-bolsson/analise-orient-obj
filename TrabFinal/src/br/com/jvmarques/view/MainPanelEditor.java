@@ -1,6 +1,5 @@
 package br.com.jvmarques.view;
 
-import br.com.jvmarques.view.util.TableWithOptions;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -12,11 +11,9 @@ import javax.swing.JPanel;
  */
 public class MainPanelEditor {
 
-    private final BooksTableEditor availableBooksPanel;
+    private final BooksTableEditor availableBooksPanel, userBooks;
 
-    private final TableWithOptions userBooks;
-
-    public MainPanelEditor(BooksTableEditor availableBooksPanel, TableWithOptions userBooks) {
+    public MainPanelEditor(BooksTableEditor availableBooksPanel, BooksTableEditor userBooks) {
         this.availableBooksPanel = availableBooksPanel;
         this.userBooks = userBooks;
     }
@@ -25,7 +22,7 @@ public class MainPanelEditor {
         JPanel panel = new JPanel(new BorderLayout());
 
         panel.add(availableBooksPanel.createPanel(), BorderLayout.CENTER);
-        panel.add(userBooks, BorderLayout.PAGE_END);
+        panel.add(userBooks.createPanel(), BorderLayout.PAGE_END);
 
         return panel;
     }

@@ -5,49 +5,40 @@
  */
 package br.com.jvmarques.view;
 
-import br.com.jvmarques.controller.BooksOptionsController;
 import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.controller.UserBooksOptionsController;
 import br.com.jvmarques.entity.Book;
 import br.com.jvmarques.entity.User;
-import java.awt.Dimension;
 import javax.swing.JDialog;
 
 /**
  *
  * @author joaobolsson
  */
-public class MainPanelEditorLiveTest {
+public class UserBooksTableEditorLiveTest {
 
-    public MainPanelEditorLiveTest() {
+    public UserBooksTableEditorLiveTest() {
     }
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         Book book = new Book("Livro A");
 
         ListController controller = new ListController();
         controller.add(book);
 
-        BooksOptionsController optController = new BooksOptionsController(controller);
-        BooksTableEditor editor = new BooksTableEditor(controller, optController);
-
         User user = new User("joao", "123");
         user.getController().add(book);
 
-        UserBooksOptionsController userBooksOptionsController = new UserBooksOptionsController(user.getController());
-
-        BooksTableEditor userBooksEditor = new BooksTableEditor(user.getController(), userBooksOptionsController);
-
-        MainPanelEditor main = new MainPanelEditor(editor, userBooksEditor);
+        UserBooksOptionsController optController = new UserBooksOptionsController(controller);
+        BooksTableEditor editor = new BooksTableEditor(controller, optController);
 
         JDialog dialog = new JDialog();
         dialog.setTitle("Books Table Live Test");
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setLocationRelativeTo(null);
 
-        dialog.setContentPane(main.createPanel());
+        dialog.setContentPane(editor.createPanel());
 
-        dialog.setPreferredSize(new Dimension(400, 300));
         dialog.pack();
         dialog.setVisible(true);
     }

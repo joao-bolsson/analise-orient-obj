@@ -18,6 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JViewport;
 
 /**
+ * TODO: documentação
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 20.
@@ -82,7 +83,7 @@ public class PanelWithTable extends JPanel {
      */
     public void init() {
         if (!initialized) {
-            table.init(true, true, null);
+            table.init();
 
             addListeners();
 
@@ -127,7 +128,9 @@ public class PanelWithTable extends JPanel {
         cons.fill = GridBagConstraints.BOTH;
 
         JPanel btnPanel = new JPanel(new GridBagLayout());
-        btnPanel.add(btnAdd, cons);
+        if (optController.showAdd()) {
+            btnPanel.add(btnAdd, cons);
+        }
 
         return btnPanel;
     }
