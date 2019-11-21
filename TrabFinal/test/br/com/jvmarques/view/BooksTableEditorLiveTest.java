@@ -1,5 +1,6 @@
 package br.com.jvmarques.view;
 
+import br.com.jvmarques.controller.BooksOptionsController;
 import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.entity.Book;
 import javax.swing.JDialog;
@@ -26,7 +27,8 @@ public class BooksTableEditorLiveTest {
         ListController controller = new ListController();
         controller.add(book);
 
-        BooksTableEditor editor = new BooksTableEditor(controller);
+        BooksOptionsController optController = new BooksOptionsController(controller);
+        BooksTableEditor editor = new BooksTableEditor(controller, optController);
 
         JDialog dialog = new JDialog();
         dialog.setTitle("Books Table Live Test");

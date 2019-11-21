@@ -1,7 +1,7 @@
 package br.com.jvmarques.view;
 
-import br.com.jvmarques.controller.BooksOptionsController;
 import br.com.jvmarques.controller.ListController;
+import br.com.jvmarques.controller.OptionsController;
 import br.com.jvmarques.model.BooksTableModel;
 import br.com.jvmarques.model.CustomTableModel;
 import br.com.jvmarques.view.util.PanelWithTable;
@@ -20,13 +20,17 @@ public class BooksTableEditor implements ListDataListener {
 
     private final CustomTableModel model;
 
+    private final OptionsController optController;
+
     /**
      * Creates a editor to show the table with books.
      *
      * @param controller Controller to manage the books.
+     * @param optController Options controller.
      */
-    public BooksTableEditor(final ListController controller) {
+    public BooksTableEditor(final ListController controller, final OptionsController optController) {
         this.controller = controller;
+        this.optController = optController;
         model = new BooksTableModel(controller.getAll());
     }
 
@@ -34,7 +38,6 @@ public class BooksTableEditor implements ListDataListener {
      * @return The panel to show the table with books.
      */
     public JPanel createPanel() {
-        BooksOptionsController optController = new BooksOptionsController(controller);
         PanelWithTable panel = new PanelWithTable(model, 1, optController);
 
         panel.init();
