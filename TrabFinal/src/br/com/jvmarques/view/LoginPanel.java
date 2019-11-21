@@ -104,8 +104,7 @@ public class LoginPanel extends JPanel {
 
                 User user = new User(userTxt.getText(), userTxt.getText());
 
-                boolean login = userController.singUp((Window) parent, user);
-                System.out.println("cadastrou? " + login);
+                userController.singUp((Window) parent, user);
             }
         });
 
@@ -120,8 +119,7 @@ public class LoginPanel extends JPanel {
 
                 User user = new User(userTxt.getText(), userTxt.getText());
 
-                boolean login = userController.login((Window) parent, user);
-                System.out.println("logou? " + login);
+                userController.login((Window) parent, user);
             }
         });
     }

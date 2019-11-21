@@ -38,11 +38,20 @@ public class UserManager {
      * @return True if the login is valid.
      */
     public boolean login(final User user) {
-        if (users.contains(user)) {
-            activeUser = user;
-            return true;
+        for (User u : users) {
+            if (u.equals(user)) {
+                activeUser = u;
+                return true;
+            }
         }
         return false;
+    }
+
+    /**
+     * Logout.
+     */
+    public void logout() {
+        activeUser = null;
     }
 
     /**

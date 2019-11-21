@@ -2,6 +2,7 @@ package br.com.jvmarques.entity;
 
 import br.com.jvmarques.controller.ListController;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * TODO: documentação
@@ -38,6 +39,30 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.login);
+        hash = 37 * hash + Objects.hashCode(this.password);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof User)) {
+            return false;
+        }
+
+        final User other = (User) obj;
+        if (!Objects.equals(this.login, other.login)) {
+            return false;
+        }
+        return Objects.equals(this.password, other.password);
     }
 
 }
