@@ -3,6 +3,7 @@ package br.com.jvmarques.view;
 import br.com.jvmarques.controller.BooksOptionsController;
 import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.entity.Book;
+import java.awt.Dimension;
 import javax.swing.JDialog;
 
 /**
@@ -37,6 +38,7 @@ public class BooksTableEditorLiveTest {
 
         dialog.setContentPane(editor.createPanel());
 
+        dialog.setPreferredSize(new Dimension(700, 300));
         dialog.pack();
         dialog.setVisible(true);
     }

@@ -10,7 +10,6 @@ import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.controller.UserBooksOptionsController;
 import br.com.jvmarques.entity.Book;
 import br.com.jvmarques.entity.User;
-import java.awt.Dimension;
 import javax.swing.JDialog;
 
 /**
@@ -47,7 +46,6 @@ public class MainPanelEditorLiveTest {
 
         dialog.setContentPane(main.createPanel());
 
-        dialog.setPreferredSize(new Dimension(400, 300));
         dialog.pack();
         dialog.setVisible(true);
     }
