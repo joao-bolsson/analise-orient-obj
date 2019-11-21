@@ -5,10 +5,8 @@
         <group>
             <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/model/ItemRequest.java</file>
             <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/model/Request.java</file>
-            <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/model/ListModel.java</file>
-            <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/controller/ProductController.java</file>
             <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/view/Main.java</file>
-            <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/controller/UserController.java</file>
+            <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/model/ListModel.java</file>
             <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/model/User.java</file>
             <file>file:/home/joao/cc/analise-orient-obj/Trab1/src/model/Product.java</file>
         </group>
