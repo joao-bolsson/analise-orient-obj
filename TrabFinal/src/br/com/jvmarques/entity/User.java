@@ -16,6 +16,9 @@ public class User {
     private final List<Book> books = new ArrayList<>();
 
     public User(final String login, final String password) {
+        if (login == null || password == null) {
+            throw new IllegalArgumentException("User must contain a non null login and password.");
+        }
         this.login = login;
         this.password = password;
     }

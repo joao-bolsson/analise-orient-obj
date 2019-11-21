@@ -1,13 +1,20 @@
 package br.com.jvmarques.view;
 
+import br.com.jvmarques.controller.UserController;
+import br.com.jvmarques.entity.User;
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -20,8 +27,10 @@ public class LoginPanel extends JPanel {
 
     private final JButton btnSignIn;
     private final JButton btnSignUp;
-    private final JTextField passTxt;
+    private final JPasswordField passTxt;
     private final JTextField userTxt;
+
+    private final UserController userController = new UserController();
 
     /**
      * Creates new form LoginPanel.
@@ -29,7 +38,7 @@ public class LoginPanel extends JPanel {
     public LoginPanel() {
         super(new BorderLayout());
         userTxt = new JTextField();
-        passTxt = new JTextField();
+        passTxt = new JPasswordField();
         btnSignIn = new JButton("Entrar");
         btnSignUp = new JButton("Cadastrar");
 
@@ -83,7 +92,43 @@ public class LoginPanel extends JPanel {
         return fieldsPanel;
     }
 
+    private void addListeners() {
+        btnSignUp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                Container parent = getParent();
+
+                while (!(parent instanceof Window)) {
+                    parent = parent.getParent();
+                }
+
+                User user = new User(userTxt.getText(), userTxt.getText());
+
+                boolean login = userController.singUp((Window) parent, user);
+                System.out.println("cadastrou? " + login);
+            }
+        });
+
+        btnSignIn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                Container parent = getParent();
+
+                while (!(parent instanceof Window)) {
+                    parent = parent.getParent();
+                }
+
+                User user = new User(userTxt.getText(), userTxt.getText());
+
+                boolean login = userController.login((Window) parent, user);
+                System.out.println("logou? " + login);
+            }
+        });
+    }
+
     private void init() {
+        addListeners();
+
         add(buildFieldsPanel(), BorderLayout.CENTER);
         add(buildButtonsPanel(), BorderLayout.PAGE_END);
     }
