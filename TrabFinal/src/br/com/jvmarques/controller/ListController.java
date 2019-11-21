@@ -49,11 +49,13 @@ public class ListController<E> {
         if (item == null) {
             return;
         }
-        int first = list.size();
-        list.add(item);
-        int last = list.size() - 1;
+        if (!list.contains(item)) {
+            int first = list.size();
+            list.add(item);
+            int last = list.size() - 1;
 
-        fireIntervalAdded(first, last);
+            fireIntervalAdded(first, last);
+        }
     }
 
     /**

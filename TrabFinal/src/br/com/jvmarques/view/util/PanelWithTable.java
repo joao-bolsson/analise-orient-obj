@@ -88,6 +88,7 @@ public class PanelWithTable extends JPanel {
             addListeners();
 
             setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+            setPreferredSize(new Dimension(700, 300));
 
             JPanel northPanel = new JPanel(new BorderLayout());
 
