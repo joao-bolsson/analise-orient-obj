@@ -1,4 +1,4 @@
-package br.com.jvmarques.controller;
+package br.com.jvmarques.manager;
 
 import br.com.jvmarques.entity.User;
 import java.util.ArrayList;

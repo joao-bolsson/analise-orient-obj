@@ -1,6 +1,6 @@
 package br.com.jvmarques.view;
 
-import br.com.jvmarques.controller.UserManager;
+import br.com.jvmarques.manager.UserManager;
 import br.com.jvmarques.entity.User;
 import java.awt.BorderLayout;
 import java.awt.Container;

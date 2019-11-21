@@ -1,7 +1,9 @@
 package br.com.jvmarques.controller;
 
+import br.com.jvmarques.manager.UserManager;
 import br.com.jvmarques.entity.Book;
 import br.com.jvmarques.entity.User;
+import br.com.jvmarques.manager.BooksManager;
 import br.com.jvmarques.view.BooksTableEditor;
 import br.com.jvmarques.view.MainPanelEditor;
 import br.com.jvmarques.view.UserPanel;
@@ -28,7 +30,7 @@ public class UserController {
             User user = UserManager.getInstance().getActiveUser();
             parent.dispose();
 
-            ListController<Book> controller = new ListController<>();
+            ListController<Book> controller = BooksManager.getInstance();
 
             BooksTableEditor availableBooksPanel = new BooksTableEditor(controller, new BooksOptionsController(controller));
 

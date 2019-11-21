@@ -1,5 +1,6 @@
 package br.com.jvmarques.controller;
 
+import br.com.jvmarques.manager.UserManager;
 import br.com.jvmarques.entity.Book;
 import br.com.jvmarques.entity.User;
 import br.com.jvmarques.model.CustomTableModel;

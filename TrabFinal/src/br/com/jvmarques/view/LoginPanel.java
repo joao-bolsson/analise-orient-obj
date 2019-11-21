@@ -102,7 +102,9 @@ public class LoginPanel extends JPanel {
                     parent = parent.getParent();
                 }
 
-                User user = new User(userTxt.getText(), userTxt.getText());
+                String pass = String.valueOf(passTxt.getPassword());
+
+                User user = new User(userTxt.getText(), pass);
 
                 userController.singUp((Window) parent, user);
             }
@@ -117,7 +119,8 @@ public class LoginPanel extends JPanel {
                     parent = parent.getParent();
                 }
 
-                User user = new User(userTxt.getText(), userTxt.getText());
+                String pass = String.valueOf(passTxt.getPassword());
+                User user = new User(userTxt.getText(), pass);
 
                 userController.login((Window) parent, user);
             }
