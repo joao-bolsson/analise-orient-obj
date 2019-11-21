@@ -1,6 +1,6 @@
 package br.com.jvmarques.entity;
 
-import java.util.ArrayList;
+import br.com.jvmarques.controller.ListController;
 import java.util.List;
 
 /**
@@ -13,7 +13,7 @@ public class User {
 
     private final String login, password;
 
-    private final List<Book> books = new ArrayList<>();
+    private final ListController<Book> controller;
 
     public User(final String login, final String password) {
         if (login == null || password == null) {
@@ -21,10 +21,15 @@ public class User {
         }
         this.login = login;
         this.password = password;
+        controller = new ListController();
+    }
+
+    public ListController<Book> getController() {
+        return controller;
     }
 
     public List<Book> getBooks() {
-        return new ArrayList<>(books);
+        return controller.getAll();
     }
 
     public String getLogin() {
