@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * TODO: documentação
  *
  * @author João Bolsson (jvmarques@inf.ufsm.com.br)
  * @version 2019, Nov 21.
@@ -16,6 +15,12 @@ public class User {
 
     private final ListController<Book> controller;
 
+    /**
+     * Creates a new user.
+     *
+     * @param login User login.
+     * @param password User password.
+     */
     public User(final String login, final String password) {
         if (login == null || password == null) {
             throw new IllegalArgumentException("User must contain a non null login and password.");
@@ -25,18 +30,32 @@ public class User {
         controller = new ListController();
     }
 
+    /**
+     * The controller for the user books.
+     *
+     * @return
+     */
     public ListController<Book> getController() {
         return controller;
     }
 
+    /**
+     * @return A list with the user books.
+     */
     public List<Book> getBooks() {
         return controller.getAll();
     }
 
+    /**
+     * @return User login.
+     */
     public String getLogin() {
         return login;
     }
 
+    /**
+     * @return User password.
+     */
     public String getPassword() {
         return password;
     }

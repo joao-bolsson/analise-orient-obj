@@ -18,7 +18,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
- * TODO: fazer disso um editor?
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 21.

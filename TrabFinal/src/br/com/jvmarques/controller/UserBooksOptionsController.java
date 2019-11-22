@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.jvmarques.controller;
 
 import br.com.jvmarques.entity.Book;
@@ -17,7 +12,8 @@ import javax.swing.JTable;
 
 /**
  *
- * @author joaobolsson
+ * @author João Bolsson (jvmarques@inf.ufsm.br)
+ * @version 2019, Nov 22.
  */
 public class UserBooksOptionsController implements OptionsController<Book> {
 

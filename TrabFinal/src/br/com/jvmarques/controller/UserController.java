@@ -14,17 +14,26 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 /**
- * TODO: documentação
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 21.
  */
 public class UserController {
 
+    /**
+     * Creates a controller for users.
+     */
     public UserController() {
         // empty
     }
 
+    /**
+     * Do login with given user.
+     *
+     * @param parent Window parent.
+     * @param u User to login.
+     * @return True - success, else - false.
+     */
     public boolean login(final Window parent, final User u) {
         if (UserManager.getInstance().login(u)) {
             User user = UserManager.getInstance().getActiveUser();
@@ -57,6 +66,13 @@ public class UserController {
         return false;
     }
 
+    /**
+     * Creates and login a new user.
+     *
+     * @param parent Windows parent.
+     * @param user User to add.
+     * @return True - success, else - false.
+     */
     public boolean singUp(final Window parent, final User user) {
         if (!UserManager.getInstance().loginExists(user)) {
             UserManager.getInstance().addUser(user);

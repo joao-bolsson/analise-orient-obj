@@ -18,7 +18,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * TODO: documentação.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 21.
@@ -29,6 +28,11 @@ public class UserPanel extends JPanel {
 
     private final JButton btnLogOut;
 
+    /**
+     * Creates a panel to show basic information for the given user and a button to logou.
+     *
+     * @param user User to show information on the panel.
+     */
     public UserPanel(final User user) {
         super(new BorderLayout());
         this.user = user;

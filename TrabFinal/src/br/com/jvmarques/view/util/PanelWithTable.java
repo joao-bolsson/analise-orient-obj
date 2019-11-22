@@ -18,7 +18,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JViewport;
 
 /**
- * TODO: documentação
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 20.
