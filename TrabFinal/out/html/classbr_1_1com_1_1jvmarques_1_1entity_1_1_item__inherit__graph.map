@@ -1,0 +1,6 @@
+<map id="br.com.jvmarques.entity.Item" name="br.com.jvmarques.entity.Item">
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,197,91"/>
+<area shape="rect" id="node2" href="$classbr_1_1com_1_1jvmarques_1_1entity_1_1_book.html" title=" " alt="" coords="245,5,441,32"/>
+<area shape="rect" id="node3" href="$classbr_1_1com_1_1jvmarques_1_1entity_1_1_magazine.html" title=" " alt="" coords="260,57,427,98"/>
+<area shape="rect" id="node4" href="$classbr_1_1com_1_1jvmarques_1_1entity_1_1_paper.html" title=" " alt="" coords="260,122,427,163"/>
+</map>

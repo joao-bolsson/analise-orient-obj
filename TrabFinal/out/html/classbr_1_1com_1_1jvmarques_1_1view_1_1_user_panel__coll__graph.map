@@ -1,0 +1,8 @@
+<map id="br.com.jvmarques.view.UserPanel" name="br.com.jvmarques.view.UserPanel">
+<area shape="rect" id="node1" title=" " alt="" coords="31,228,221,269"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,139,68,165"/>
+<area shape="rect" id="node3" title=" " alt="" coords="93,139,159,165"/>
+<area shape="rect" id="node4" href="$classbr_1_1com_1_1jvmarques_1_1entity_1_1_user.html" title=" " alt="" coords="183,139,378,165"/>
+<area shape="rect" id="node5" title=" " alt="" coords="163,20,219,47"/>
+<area shape="rect" id="node6" href="$classbr_1_1com_1_1jvmarques_1_1controller_1_1_list_controller.html" title=" " alt="" coords="244,5,499,61"/>
+</map>
