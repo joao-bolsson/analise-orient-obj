@@ -4,7 +4,10 @@ import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.controller.OptionsController;
 import br.com.jvmarques.model.ItemsTableModel;
 import br.com.jvmarques.model.CustomTableModel;
+import br.com.jvmarques.model.ListIterator;
 import br.com.jvmarques.view.util.PanelWithTable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
@@ -57,8 +60,15 @@ public class BooksTableEditor implements ListDataListener {
     @Override
     public void contentsChanged(final ListDataEvent evt) {
         if (evt != null && evt.getSource() instanceof ListController) {
-            ListController prots = (ListController) evt.getSource();
-            model.addAll(prots.getAll());
+            ListController items = (ListController) evt.getSource();
+
+            List list = new ArrayList();
+            ListIterator it = new ListIterator<>(items.getAll());
+            while (it.hasNext()) {
+                list.add(it.next());
+            }
+
+            model.addAll(list);
         }
     }
 
