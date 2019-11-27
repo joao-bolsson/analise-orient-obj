@@ -3,7 +3,7 @@ package br.com.jvmarques.model;
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
- * @version 2019, Nov 20.
+ * @version 2019, Nov 27.
  * @param <E> Object to iterate.
  */
 public interface CustomIterator<E> {

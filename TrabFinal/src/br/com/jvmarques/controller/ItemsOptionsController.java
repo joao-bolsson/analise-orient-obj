@@ -1,11 +1,9 @@
 package br.com.jvmarques.controller;
 
-import br.com.jvmarques.entity.Book;
 import br.com.jvmarques.manager.UserManager;
 import br.com.jvmarques.entity.Item;
-import br.com.jvmarques.entity.Magazine;
-import br.com.jvmarques.entity.Paper;
 import br.com.jvmarques.entity.User;
+import br.com.jvmarques.manager.ItemFactory;
 import br.com.jvmarques.model.CustomTableModel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -33,7 +31,6 @@ import javax.swing.JTextField;
  */
 public class ItemsOptionsController implements OptionsController<Item> {
 
-    private static final String[] TYPES = new String[]{"Livro", "Revista", "Jornal"};
     private final ListController listController;
 
     private JDialog dialog;
@@ -109,7 +106,7 @@ public class ItemsOptionsController implements OptionsController<Item> {
     private class ItemPanel extends JPanel {
 
         private final JTextField nameField = new JTextField(20);
-        private final JComboBox<String> typeCombo = new JComboBox<>(TYPES);
+        private final JComboBox<ItemFactory.ItemId> typeCombo = new JComboBox<>(ItemFactory.ItemId.values());
 
         private final JButton btnSave, btnCancel;
 
@@ -123,28 +120,13 @@ public class ItemsOptionsController implements OptionsController<Item> {
                 public void actionPerformed(ActionEvent e) {
                     String name = nameField.getText();
                     if (name != null && !name.isEmpty()) {
-                        String type = (String) typeCombo.getSelectedItem();
+                        ItemFactory.ItemId type = (ItemFactory.ItemId) typeCombo.getSelectedItem();
 
                         if (item != null) {
                             item.setName(name);
                             listController.fireContentsChanged();
                         } else {
-                            // TODO: pode ser factory aqui?
-                            switch (type) {
-                                case "Livro":
-                                    item = new Book(name);
-                                    break;
-                                case "Revista":
-                                    item = new Magazine(name);
-                                    break;
-                                case "Jornal":
-                                    item = new Paper(name);
-                                    break;
-                                default:
-                                    break;
-                            }
-
-                            listController.add(item);
+                            listController.add(ItemFactory.createItem(type, name));
                         }
                         item = null;
                     }
