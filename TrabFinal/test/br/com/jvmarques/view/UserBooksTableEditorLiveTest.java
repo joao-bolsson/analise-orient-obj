@@ -6,7 +6,7 @@
 package br.com.jvmarques.view;
 
 import br.com.jvmarques.controller.ListController;
-import br.com.jvmarques.controller.UserBooksOptionsController;
+import br.com.jvmarques.controller.UserItemsOptionsController;
 import br.com.jvmarques.entity.Book;
 import br.com.jvmarques.entity.User;
 import javax.swing.JDialog;
@@ -29,7 +29,7 @@ public class UserBooksTableEditorLiveTest {
         User user = new User("joao", "123");
         user.getController().add(book);
 
-        UserBooksOptionsController optController = new UserBooksOptionsController(controller);
+        UserItemsOptionsController optController = new UserItemsOptionsController(controller);
         BooksTableEditor editor = new BooksTableEditor(controller, optController);
 
         JDialog dialog = new JDialog();

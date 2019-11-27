@@ -13,7 +13,7 @@ public class User {
 
     private final String login, password;
 
-    private final ListController<Book> controller;
+    private final ListController<Item> controller;
 
     /**
      * Creates a new user.
@@ -35,14 +35,14 @@ public class User {
      *
      * @return
      */
-    public ListController<Book> getController() {
+    public ListController<Item> getController() {
         return controller;
     }
 
     /**
      * @return A list with the user books.
      */
-    public List<Book> getBooks() {
+    public List<Item> getBooks() {
         return controller.getAll();
     }
 

@@ -2,7 +2,7 @@ package br.com.jvmarques.view;
 
 import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.controller.OptionsController;
-import br.com.jvmarques.model.BooksTableModel;
+import br.com.jvmarques.model.ItemsTableModel;
 import br.com.jvmarques.model.CustomTableModel;
 import br.com.jvmarques.view.util.PanelWithTable;
 import javax.swing.JPanel;
@@ -31,14 +31,14 @@ public class BooksTableEditor implements ListDataListener {
     public BooksTableEditor(final ListController controller, final OptionsController optController) {
         this.controller = controller;
         this.optController = optController;
-        model = new BooksTableModel(controller.getAll());
+        model = new ItemsTableModel(controller.getAll());
     }
 
     /**
      * @return The panel to show the table with books.
      */
     public JPanel createPanel() {
-        PanelWithTable panel = new PanelWithTable(model, 1, optController);
+        PanelWithTable panel = new PanelWithTable(model, 2, optController);
 
         panel.init();
         controller.addListDataListener(this);

@@ -1,6 +1,6 @@
 package br.com.jvmarques.view;
 
-import br.com.jvmarques.controller.BooksOptionsController;
+import br.com.jvmarques.controller.ItemsOptionsController;
 import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.entity.Book;
 import java.awt.Dimension;
@@ -28,7 +28,7 @@ public class BooksTableEditorLiveTest {
         ListController controller = new ListController();
         controller.add(book);
 
-        BooksOptionsController optController = new BooksOptionsController(controller);
+        ItemsOptionsController optController = new ItemsOptionsController(controller);
         BooksTableEditor editor = new BooksTableEditor(controller, optController);
 
         JDialog dialog = new JDialog();

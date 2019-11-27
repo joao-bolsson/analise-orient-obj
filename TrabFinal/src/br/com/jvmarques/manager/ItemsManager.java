@@ -1,29 +1,29 @@
 package br.com.jvmarques.manager;
 
 import br.com.jvmarques.controller.ListController;
-import br.com.jvmarques.entity.Book;
+import br.com.jvmarques.entity.Item;
 
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 21.
  */
-public class BooksManager extends ListController<Book> {
+public class ItemsManager extends ListController<Item> {
 
-    private BooksManager() {
+    private ItemsManager() {
         // empty
     }
 
     /**
      * @return The single instance of this manager.
      */
-    public static BooksManager getInstance() {
+    public static ItemsManager getInstance() {
         return BooksManagerHolder.INSTANCE;
     }
 
     private static class BooksManagerHolder {
 
-        private static final BooksManager INSTANCE = new BooksManager();
+        private static final ItemsManager INSTANCE = new ItemsManager();
     }
 
 }

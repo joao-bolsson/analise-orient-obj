@@ -5,9 +5,9 @@
  */
 package br.com.jvmarques.view;
 
-import br.com.jvmarques.controller.BooksOptionsController;
+import br.com.jvmarques.controller.ItemsOptionsController;
 import br.com.jvmarques.controller.ListController;
-import br.com.jvmarques.controller.UserBooksOptionsController;
+import br.com.jvmarques.controller.UserItemsOptionsController;
 import br.com.jvmarques.entity.Book;
 import br.com.jvmarques.entity.User;
 import javax.swing.JDialog;
@@ -27,13 +27,13 @@ public class MainPanelEditorLiveTest {
         ListController controller = new ListController();
         controller.add(book);
 
-        BooksOptionsController optController = new BooksOptionsController(controller);
+        ItemsOptionsController optController = new ItemsOptionsController(controller);
         BooksTableEditor editor = new BooksTableEditor(controller, optController);
 
         User user = new User("joao", "123");
         user.getController().add(book);
 
-        UserBooksOptionsController userBooksOptionsController = new UserBooksOptionsController(user.getController());
+        UserItemsOptionsController userBooksOptionsController = new UserItemsOptionsController(user.getController());
 
         BooksTableEditor userBooksEditor = new BooksTableEditor(user.getController(), userBooksOptionsController);
 

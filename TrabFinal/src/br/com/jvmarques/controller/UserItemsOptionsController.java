@@ -1,6 +1,6 @@
 package br.com.jvmarques.controller;
 
-import br.com.jvmarques.entity.Book;
+import br.com.jvmarques.entity.Item;
 import br.com.jvmarques.model.CustomTableModel;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -15,23 +15,23 @@ import javax.swing.JTable;
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 22.
  */
-public class UserBooksOptionsController implements OptionsController<Book> {
+public class UserItemsOptionsController implements OptionsController<Item> {
 
     private final ListController listController;
 
     private JTable table;
 
-    public UserBooksOptionsController(ListController listController) {
+    public UserItemsOptionsController(ListController listController) {
         this.listController = listController;
     }
 
     @Override
-    public void edit(Window parent, Book item) {
+    public void edit(Window parent, Item item) {
         // nothing
     }
 
     @Override
-    public void delete(Book item) {
+    public void delete(Item item) {
         // nothing
     }
 
