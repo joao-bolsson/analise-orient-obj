@@ -14,6 +14,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 /**
+ * Controller for user operations, like login and logout.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 21.

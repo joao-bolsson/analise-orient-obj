@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 
 /**
+ * Options controller for the table that shows the user items (books, magazines, etc).
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 22.
@@ -25,6 +26,11 @@ public class UserItemsOptionsController implements OptionsController<Item> {
 
     private JTable table;
 
+    /**
+     * Creates an options controller based on the given list controller.
+     *
+     * @param listController List controller containing predefined items.
+     */
     public UserItemsOptionsController(ListController listController) {
         this.listController = listController;
         factory = new UserOptFactory();

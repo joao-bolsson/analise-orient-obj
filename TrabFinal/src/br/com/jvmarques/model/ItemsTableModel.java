@@ -4,6 +4,7 @@ import br.com.jvmarques.entity.Item;
 import java.util.List;
 
 /**
+ * Items table model to show items.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.com.br)
  * @version 2019, Nov 21.

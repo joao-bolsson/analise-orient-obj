@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Implementing a custom iterator to iterate a given list.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 27.

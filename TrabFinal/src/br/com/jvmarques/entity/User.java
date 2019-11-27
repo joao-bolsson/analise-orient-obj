@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Representing a user.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.com.br)
  * @version 2019, Nov 21.

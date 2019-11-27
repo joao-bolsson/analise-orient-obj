@@ -27,6 +27,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
+ * Controller for options on available items table. It'll used to edit and delete items from the table.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.com.br)
  * @version 2019, Nov 21.

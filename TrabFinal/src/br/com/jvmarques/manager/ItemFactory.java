@@ -6,6 +6,7 @@ import br.com.jvmarques.entity.Magazine;
 import br.com.jvmarques.entity.Paper;
 
 /**
+ * A factory for items.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 27.

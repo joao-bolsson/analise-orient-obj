@@ -1,12 +1,14 @@
 package br.com.jvmarques.controller;
 
 import br.com.jvmarques.manager.ButtonsOptExtFactory;
+import br.com.jvmarques.view.util.TableWithOptions;
 import java.awt.Window;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JTable;
 
 /**
+ * Interface for options controller witch is used on each row of a {@link TableWithOptions}.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 20.
@@ -38,12 +40,23 @@ public interface OptionsController<E> {
         // empty
     }
 
+    /**
+     * @return The factory for show buttons.
+     */
     ButtonsOptExtFactory getOptFactory();
 
+    /**
+     * @return Extra buttons options on the table. Default: null.
+     */
     default List<JButton> getExtOptions() {
         return null;
     }
 
+    /**
+     * Sets the table for this controller.
+     *
+     * @param table Table to set.
+     */
     default void setTable(JTable table) {
         // empty
     }

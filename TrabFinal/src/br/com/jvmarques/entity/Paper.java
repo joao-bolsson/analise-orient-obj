@@ -1,6 +1,7 @@
 package br.com.jvmarques.entity;
 
 /**
+ * Representing a paper.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.com.br)
  * @version 2019, Nov 26.

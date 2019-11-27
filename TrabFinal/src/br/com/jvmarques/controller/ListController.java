@@ -7,6 +7,8 @@ import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 
 /**
+ * An implementation for a generic list controller. It's useful to dispatch {@link ListDataEvent} when the contents
+ * changes.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.com.br)
  * @version 2019, Nov 21.

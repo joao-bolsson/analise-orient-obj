@@ -4,6 +4,7 @@ import br.com.jvmarques.controller.ListController;
 import br.com.jvmarques.entity.Item;
 
 /**
+ * A singleton class that stores all the items.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 21.

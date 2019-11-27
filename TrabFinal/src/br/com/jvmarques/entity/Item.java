@@ -3,6 +3,7 @@ package br.com.jvmarques.entity;
 import java.util.Objects;
 
 /**
+ * Abstract object representing any item in a library.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.com.br)
  * @version 2019, Nov 26.

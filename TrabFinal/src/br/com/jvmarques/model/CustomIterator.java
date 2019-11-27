@@ -1,6 +1,7 @@
 package br.com.jvmarques.model;
 
 /**
+ * An interface to iterate some list.
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Nov 27.
