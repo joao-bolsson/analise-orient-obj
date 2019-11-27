@@ -1,5 +1,6 @@
 package br.com.jvmarques.controller;
 
+import br.com.jvmarques.manager.ButtonsOptExtFactory;
 import java.awt.Window;
 import java.util.List;
 import javax.swing.JButton;
@@ -37,17 +38,7 @@ public interface OptionsController<E> {
         // empty
     }
 
-    default boolean showEdit() {
-        return true;
-    }
-
-    default boolean showDelete() {
-        return true;
-    }
-
-    default boolean showAdd() {
-        return true;
-    }
+    ButtonsOptExtFactory getOptFactory();
 
     default List<JButton> getExtOptions() {
         return null;

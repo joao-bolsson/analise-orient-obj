@@ -3,6 +3,8 @@ package br.com.jvmarques.controller;
 import br.com.jvmarques.manager.UserManager;
 import br.com.jvmarques.entity.Item;
 import br.com.jvmarques.entity.User;
+import br.com.jvmarques.manager.AvailableOptFactory;
+import br.com.jvmarques.manager.ButtonsOptExtFactory;
 import br.com.jvmarques.manager.ItemFactory;
 import br.com.jvmarques.model.CustomTableModel;
 import java.awt.BorderLayout;
@@ -33,6 +35,8 @@ public class ItemsOptionsController implements OptionsController<Item> {
 
     private final ListController listController;
 
+    private final ButtonsOptExtFactory factory;
+
     private JDialog dialog;
 
     private JTable table;
@@ -44,6 +48,7 @@ public class ItemsOptionsController implements OptionsController<Item> {
      */
     public ItemsOptionsController(final ListController listController) {
         this.listController = listController;
+        factory = new AvailableOptFactory();
     }
 
     @Override
@@ -101,6 +106,11 @@ public class ItemsOptionsController implements OptionsController<Item> {
             }
         });
         return Arrays.asList(btn);
+    }
+
+    @Override
+    public ButtonsOptExtFactory getOptFactory() {
+        return factory;
     }
 
     private class ItemPanel extends JPanel {

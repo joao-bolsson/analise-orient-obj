@@ -1,6 +1,8 @@
 package br.com.jvmarques.view.util;
 
 import br.com.jvmarques.controller.OptionsController;
+import br.com.jvmarques.manager.AvailableOptFactory;
+import br.com.jvmarques.manager.ButtonsOptExtFactory;
 import br.com.jvmarques.model.CustomTableModel;
 import java.awt.Window;
 import java.util.Arrays;
@@ -56,6 +58,11 @@ public class PanelWithTableLiveTest {
                 if (string != null && !string.isEmpty()) {
                     model.add(string);
                 }
+            }
+
+            @Override
+            public ButtonsOptExtFactory getOptFactory() {
+                return new AvailableOptFactory();
             }
 
         };

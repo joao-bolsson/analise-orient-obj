@@ -51,7 +51,7 @@ public class TableWithOptions extends JTable {
     }
 
     private void buildOptions() {
-        if (controller.showEdit()) {
+        if (controller.getOptFactory().showEdit()) {
             JButton btnEdit = new JButton(new AbstractAction("Editar") {
                 @Override
                 public void actionPerformed(final ActionEvent e) {
@@ -70,7 +70,7 @@ public class TableWithOptions extends JTable {
             addOption(btnEdit);
         }
 
-        if (controller.showDelete()) {
+        if (controller.getOptFactory().showDelete()) {
             JButton btnDelete = new JButton(new AbstractAction("Deletar") {
                 @Override
                 public void actionPerformed(final ActionEvent e) {

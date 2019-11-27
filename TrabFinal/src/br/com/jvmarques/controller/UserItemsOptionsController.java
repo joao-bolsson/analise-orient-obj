@@ -1,6 +1,8 @@
 package br.com.jvmarques.controller;
 
 import br.com.jvmarques.entity.Item;
+import br.com.jvmarques.manager.ButtonsOptExtFactory;
+import br.com.jvmarques.manager.UserOptFactory;
 import br.com.jvmarques.model.CustomTableModel;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -17,12 +19,15 @@ import javax.swing.JTable;
  */
 public class UserItemsOptionsController implements OptionsController<Item> {
 
+    private final ButtonsOptExtFactory factory;
+
     private final ListController listController;
 
     private JTable table;
 
     public UserItemsOptionsController(ListController listController) {
         this.listController = listController;
+        factory = new UserOptFactory();
     }
 
     @Override
@@ -33,21 +38,6 @@ public class UserItemsOptionsController implements OptionsController<Item> {
     @Override
     public void delete(Item item) {
         // nothing
-    }
-
-    @Override
-    public boolean showAdd() {
-        return false;
-    }
-
-    @Override
-    public boolean showDelete() {
-        return false;
-    }
-
-    @Override
-    public boolean showEdit() {
-        return false;
     }
 
     @Override
@@ -74,6 +64,11 @@ public class UserItemsOptionsController implements OptionsController<Item> {
             }
         });
         return Arrays.asList(btnBack);
+    }
+
+    @Override
+    public ButtonsOptExtFactory getOptFactory() {
+        return factory;
     }
 
 }

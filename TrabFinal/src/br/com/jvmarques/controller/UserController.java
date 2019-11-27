@@ -58,7 +58,7 @@ public class UserController {
 
             dialog.setContentPane(panel);
 
-            dialog.setPreferredSize(new Dimension(700, 800));
+            dialog.setPreferredSize(new Dimension(900, 800));
             dialog.pack();
             dialog.setVisible(true);
             return true;

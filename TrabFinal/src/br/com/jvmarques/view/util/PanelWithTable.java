@@ -128,7 +128,7 @@ public class PanelWithTable extends JPanel {
         cons.fill = GridBagConstraints.BOTH;
 
         JPanel btnPanel = new JPanel(new GridBagLayout());
-        if (optController.showAdd()) {
+        if (optController.getOptFactory().showAdd()) {
             btnPanel.add(btnAdd, cons);
         }
 
